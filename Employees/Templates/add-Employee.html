@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Employee</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'add-Employee.css' %}" />
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
+
+</head>
+
+<body>
+    <nav  >
+        <label for="Logo" >Human Resources</label>
+        <ul>
+            
+            <li><a href="home.html">Home</a></li>
+            <li><a href="{% url 'employees'%}">Employees</a></li>
+            <li><a href="{% url 'add-Employee' %}">Add Employee</a></li>
+            <li><a href="#">Vacations</a></li>
+            
+        </ul>
+        
+    </nav>
+    <div class="page_container">
+        <h1>Add Employee</h1>
+        <form  action="" method="post" class="custom_form" id="add_form" onsubmit = "checkForErrors(event)">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="custom_label">Name</label>
+                <input type="text" name="name" onkeyup="validateName();" placeholder="Please enter your Name">
+                <p id="ErrorName" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Address</label>
+                <input type="address" name="address" onkeyup="validateAddress()" placeholder="Please enter your Address">
+                <p id="ErrorAddress" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Email</label>
+                <input type="email" name="email" onkeyup="validateEmail()" placeholder="Please enter your Email">
+                <p id="ErrorEmail" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Phone Number</label>
+                <input type="text" name="Phone" onkeyup="validatePhone()" placeholder="Please enter your Phone Number">
+                <p id="ErrorPhone" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Birthday</label>
+                <input type="date" name="date" onblur="validateDate()">
+                <p id="ErrorDate" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Marital status</label>
+                <select name="martial_status" onblur="validateMartialStatus()">
+                    <option value="">Select</option>
+                    <option value="Married">Married</option>
+                    <option value="Divorced">Divorced</option>
+                    <option value="Separated">Separated</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Single">Single</option>
+                </select>
+                <p id="ErrorMartialStatus" hidden></p>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Available Vacation</label>
+                <input type="number" name="Available_Vacation" onkeyup="validateVacation()" placeholder="Please enter your Available Vacation">
+                <p id="ErrorVacation" hidden></p>
+                <br>
+            </div>
+            <div class="form-group">
+                <label class="custom_label">Salary</label>
+                <input type="number" name="Salary" onkeyup="validateSalary()" placeholder="Please enter your Salary">
+                <p id="ErrorSalary" hidden></p>
+                <br>
+            </div>
+            <div class="form-group radio_group">
+                <label class="custom_label">Gender</label>
+                <div class="radio_input">
+                    <input type="radio" name="gender" value="male" checked>
+                    <label>
+                        Male
+                    </label>
+                </div>
+                <div class="radio_input">
+                    <input type="radio" name="gender" value="female">
+                    <label>
+                        Female
+                    </label>
+                </div>
+            </div>
+            <div class="submit_group">
+                <button type="submit" onclick="check();" class="submitBtn">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'add-Employee.js' %}"></script>
+</body>
+
+</html>

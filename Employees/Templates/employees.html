@@ -4,44 +4,25 @@
     <meta name="description" content="this is table page for phase1 by marco" />
     <meta charset="UTF-8" />
     {% load static %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'Employees.css' %}" />
+    <link rel="stylesheet" href="{% static 'navbar.css' %}" />
     <title>Employees Page</title>
   </head>
   <body>
-    <nav
-      style="
-        background-color: #13043b;
-        height: 80px;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      "
-    >
-      <label
-        for="Logo"
-        style="
-          color: rgb(142, 141, 178);
-          font-size: 25px;
-          padding: 0 60px;
-          line-height: 70px;
-        "
-        >Human Resources</label
-      >
-      <ul
-        style="
-          list-style: none;
-          margin: 0;
-          padding: 0;
-          float: right;
-          margin-right: 20px;
-        "
-      >
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="employees.html">Employees</a></li>
-        <li><a href="add.html">Add Employee</a></li>
-        <li><a href="vacations.html">Vacations</a></li>
+    <nav  >
+      <label for="Logo" >Human Resources</label>
+      <ul>
+          
+          <li><a href="home.html">Home</a></li>
+          <li><a href="{% url 'employees' %}">Employees</a></li>
+          <li><a href="{% url 'add-Employee' %}">Add Employee</a></li>
+          <li><a href="#">Vacations</a></li>
+          
       </ul>
-    </nav>
+      
+  </nav>
     <div class="above">
       <h1>Employees</h1>
       <div class="form">
@@ -76,15 +57,15 @@
         {% for x in myEmployees %}
         <tr class="data">
           <td>{{ x.id}}</td>
-          <td>{{ x.firstname}}</td>
+          <td>{{ x.name}}</td>
           <td>{{ x.address}}</td>
-          <td>{{ x.phone}}</td>
+          <td>{{ x.Phone}}</td>
           <td>{{ x.gender}}</td>
           <td>{{ x.martial_status}}</td>
-          <td>{{ x.Avaliable_vacation}}</td>
-          <td>{{ x.approved}}</td>
-          <td>{{ x.salary}}</td>
-          <td>{{ x.birthday}}</td>
+          <td>{{ x.Available_Vacation}}</td>
+          <td>{{ x.Available_Vacation}}</td>
+          <td>{{ x.Salary}}</td>
+          <td>{{ x.date}}</td>
           <td>
             <a href="edit-employee.html">Edit</a>
             <a href="vaction-form.html">Submit Vacation</a>
