@@ -5,6 +5,7 @@ from django.template import loader
 from django.urls import reverse
 from .models import Employees
 from .models import Vacation_Employee
+from datetime import datetime, timedelta
 
 
 
@@ -58,12 +59,19 @@ def vacations(request):
 
 
 
-def aprroved_vacation(request,id):
-    myvacation = Vacation_Employee.objects.get(id=id)   
-    context = { 'myvacation': myvacation }
-    myvacation.status='approved'
-    myvacation.save()
+def aprroved_vacation(request, id):
+    myvacation = Vacation_Employee.objects.get(id=id)
+    employee = myvacation.employee
+    if myvacation.status != 'approved':
+        from_date = myvacation.from_date
+        to_date = myvacation.to_date
+        duration = (to_date - from_date).days + 1
+        employee.Available_Vacation -= duration
+        employee.save()
+        myvacation.status = 'approved'
+        myvacation.save()
     return HttpResponseRedirect(reverse('vacations'))
+
 
 
 #make declined_vacation function
@@ -74,5 +82,5 @@ def declined_vacation(request,id):
     myvacation.save()
     return HttpResponseRedirect(reverse('vacations'))
 
-    
+
     
