@@ -1,0 +1,122 @@
+nav {
+    background-color: #13043b;
+    height: 80px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+    margin: 0%;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 20px;
+}
+nav label {
+    color: rgb(142, 141, 178);
+    font-size: 25px;
+    padding: 0 60px;
+    line-height: 70px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+nav li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+*{font-family: 'Almarai', sans-serif;}
+h1{
+    margin:2%;
+    
+}
+.data_container{
+    width:50%;
+    float:left;
+
+}
+
+.error{
+    font-size: 12px;
+    color: red;
+}
+.vaction_form{
+    display: inline-block;
+    width:50%;
+}
+.page_container{
+    width: 90%;
+    margin: auto;
+}
+.data_empolyee{
+    padding: 2%;
+    width: 50%;
+    float:left;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin:20px;
+}
+div.request_vac{
+    width: 90%;
+    padding: 3%;
+    margin: auto;
+
+}
+input[type=date],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+textarea{
+    height: 100px;
+    resize: none;
+}
+
+.submitBtn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.submitBtn:hover {
+    background-color: #3e8e41;
+}
+input [name='date_from']{
+margin-right: 10px;
+}
+label{
+display:  inline-block;
+font-size: 16px;
+color: #3e8e41;
+margin: 1%;
+}
+.customlabel{
+    margin-left: 21%;
+}
+.form-group1{
+    float: left;
+    width: 40%;
+}
+.form-group2{
+    display: inline-block;
+    width: 40%;
+    margin-left:10%;
+}
