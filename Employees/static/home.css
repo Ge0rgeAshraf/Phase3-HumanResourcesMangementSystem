@@ -1,0 +1,39 @@
+body{margin: 0px;}
+.home{
+    padding: 50px;
+}
+nav{
+    background-color: #13043b;
+     height: 80px ; 
+     width: 100%;
+    margin: 0;padding: 0;
+}
+nav label{
+    color: rgb(142, 141, 178);
+    font-size: 25px;
+    padding: 0 60px; 
+    line-height: 70px;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 20px;
+}
+nav li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+nav a:hover{
+    color: rgb(142, 141, 178);
+}
+nav a.active{
+    color:rgb(142, 141, 178) ;
+}

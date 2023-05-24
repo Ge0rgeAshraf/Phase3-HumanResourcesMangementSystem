@@ -1,0 +1,65 @@
+ 
+            *{
+                font-family: 'Almarai', sans-serif;
+                box-sizing: border-box;
+            }
+            body
+            {
+                margin: 60px auto 20px auto;
+            }
+            h1 
+            {
+                width: 90%;
+                margin: auto;
+            }
+            table
+            {
+                width: 90%;
+                border: 1px solid;
+                border-radius: 20px;
+                border-spacing: 25px;
+                font-size: large;
+                padding: 1%;
+                margin: 30px auto 60px auto;
+                
+            }
+            .btn-group button
+            {
+                border: 1px solid;
+                width: 50%;
+                border-radius: 10px;
+                background-color: rgb(0, 18, 175);
+                color: white;
+                padding: 2%;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                
+                
+            }
+            .btn-group button:hover
+            {
+                background-color: rgb(26, 0, 73);
+            }
+            .btn-group2 button
+            {
+                
+                border: 1px solid;
+                width: 50%;
+                border-radius: 10px;
+                background-color: rgb(185, 0, 0);
+                color: white;
+                padding: 2%;
+                font-size: 14px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+            }
+            .btn-group2 button:hover
+            {
+                background-color: darkred;
+            }
+            

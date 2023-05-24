@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        {% load static %}
+        <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'vacations.css' %}"/>
+        <link rel="stylesheet" href="{% static 'home.css' %}"/>
+        <title>
+            Vacation Page
+        </title>
+    </head>
+    <body> 
+        <nav  >
+            <label for="Logo" >Human Resources</label>
+            <ul>
+                
+                <li><a href="home.html">Home</a></li>
+                <li><a href="{% url 'employees'%}">Employees</a></li>
+                <li><a href="{% url 'add-Employee' %}">Add Employee</a></li>
+                <li><a href="{% url 'vacations'%}">Vacations</a></li>
+                
+            </ul>
+            
+        </nav>
+        <center><h1><b>The status of vacations submitted</b></h1></center>
+        <table>
+            <thead>
+                <tr>
+                    
+                    <b><td>ID</td></b>
+                    <b><td>Name</td></b>
+                    <b><td>From date</td></b>
+                    <b><td>To date</td></b>
+                    <b><td>Reason</td></b>
+                    <b><td>Status</td></b>
+                </tr>
+            </thead>
+            
+            <tbody>
+                {% for x in myvacations %}
+                <tr class="data">
+                  <td>{{ x.id }}</td>
+                  <td>{{ x.name }}</td>
+                  <td>{{ x.from_date }}</td>
+                  <td>{{ x.to_date }}</td>
+                  <td>{{ x.reason }}</td>
+                  <td>{{ x.status }}</td>
+                  <td>
+                    <div class="btn-group">
+                      <form action="{% url 'approved_vacation' x.id %}" method="POST" class="approve-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Approve</button>
+                      </form>
+                    </div>
+                    <div class="btn-group2">
+                      <form action="{% url 'declined_vacation' x.id %}" method="POST" class="decline-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">Decline</button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+
+
+        </table>
+        
+    <script src="{% static 'vacations.js' %}"></script>
+    </body>
+</html>

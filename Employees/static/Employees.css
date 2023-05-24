@@ -6,14 +6,7 @@ li {
   line-height: 80px;
   margin: 0 5px;
 }
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-}
-nav a:hover {
-  color: rgb(142, 141, 178);
-}
+
 table {
   text-align: center;
   width: 90%;
